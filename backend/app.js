@@ -38,7 +38,7 @@ app.use('/api/v1',order);
 
 
 app.get('/', (req, res) => {
-    res.send('<h1>route is working</h1>')
+    res.send('<h1>route is working now</h1>')
 })
 
 //middleware for error
