@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const dotenv =require('dotenv');
-import cors from "cors";
+var cors = require('cors')
 
 const errorMiddleware = require("./middleware/error");
 const cookieParser = require('cookie-parser')
