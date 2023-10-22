@@ -147,10 +147,10 @@ exports.resetPassword = catchasyncerrors(async (req, res, next) => {
 
 //1 get user details
 exports.getUserDetails = catchasyncerrors(async (req, res, next) => {
-  const user = await User.findById(req.user.id);
+ const user = await User.findById(req.user.id);
 
   res.status(200).json({
-    succes: true,
+    success: true,
     user,
   });
 });
