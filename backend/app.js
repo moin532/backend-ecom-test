@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const dotenv =require('dotenv');
+import cors from "cors";
 
 const errorMiddleware = require("./middleware/error");
 const cookieParser = require('cookie-parser')
@@ -13,6 +14,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileupload());
+app.use(cors({
+   credentials: true,
+    methods:["GET","POST","PUT","DELETE"]
+))
 
 //Route imports
 const product = require('./routes/productroute');
