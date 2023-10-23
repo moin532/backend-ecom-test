@@ -1,9 +1,14 @@
 
 const app  = require('./backend/app');
 const connectdatabase = require('./backend/config/database');
-const cloudinary = require("cloudinary")
+const cloudinary = require("cloudinary");
+const cors = require('cors');
 
-
+app.use(cors({
+    origin:'http://localhost:3000 ',
+    methods:["GET","PUT","POST","DELETE"],
+     credentials: true,
+}));
  
 //config
 if(process.env.NODE_ENV!=="PRODUCTION"){
