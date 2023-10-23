@@ -2,8 +2,9 @@
 const app  = require('./backend/app');
 const connectdatabase = require('./backend/config/database');
 const cloudinary = require("cloudinary");
-const apps = require('express');
 const cors = require('cors');
+const express = require('express');
+const apps = express();
                     
 
 
@@ -13,8 +14,7 @@ if(process.env.NODE_ENV!=="PRODUCTION"){
 }
 apps.use(cors({
     origin:'http://localhost:3000',
-    methods:["GET","PUT","POST","DELETE"], 
-    credentials: true,
+    methods:["GET","PUT","POST","DELETE"]
 }));
 
 //uncaught err
