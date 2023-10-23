@@ -16,8 +16,8 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileupload());
 app.use(cors({
     origin:'http://localhost:3000',
-    methods:["GET","PUT","POST","DELETE"],
-     credentials: true,
+    methods:["GET","PUT","POST","DELETE"], 
+    credentials: true,
 }));
 
 //Route imports
