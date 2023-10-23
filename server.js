@@ -2,14 +2,20 @@
 const app  = require('./backend/app');
 const connectdatabase = require('./backend/config/database');
 const cloudinary = require("cloudinary");
-
+const apps = require('express');
+const cors = require('cors');
+                    
 
 
 //config
 if(process.env.NODE_ENV!=="PRODUCTION"){
     require('dotenv').config({path:'backend/config/config.env'});
 }
-
+apps.use(cors({
+    origin:'http://localhost:3000',
+    methods:["GET","PUT","POST","DELETE"], 
+    credentials: true,
+}));
 
 //uncaught err
 process.on('uncaughtException',(err)=>{
