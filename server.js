@@ -5,7 +5,10 @@ const cloudinary = require("cloudinary")
 var cors = require('cors')
 
  
-app.use(cors())
+app.use(cors({
+    origin:'http://localhost:3000',
+    methods:["GET","PUT","POST","DELETE"]
+}));
 
 //config
 if(process.env.NODE_ENV!=="PRODUCTION"){
