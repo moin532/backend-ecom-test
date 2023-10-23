@@ -26,7 +26,7 @@ exports.newOrder = catchasyncerrors(async (req, res, next) => {
     totalPrice,
     size,
     paidAt: Date.now(),
-    user: req.user.id,
+    user: req.user._id,
   });
 
   res.status(201).json({
@@ -55,7 +55,7 @@ exports.getSingleOrder = catchasyncerrors(async (req, res, next) => {
 
 //get logged in user to  order
 exports.myOrders = catchasyncerrors(async (req, res, next) => {
-  const orders = await Order.find({ user: req.user.id });
+  const orders = await Order.find({ user: req.user._id });
 
   res.status(200).json({
     succes: true,
@@ -124,7 +124,7 @@ async function updateStock(id, quantity) {
 
 //delete order
 exports.dltorder = catchasyncerrors(async (req, res, next) => {
-  const order = await Order.findById(req.params.id);
+  const order = await Order.findById(req.params._id);
 
   if (!order) {
     return next(new ErrorHander("order not found with Id", 404));
