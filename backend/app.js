@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const dotenv =require('dotenv');
-
+var cors = require('cors');
 
 const errorMiddleware = require("./middleware/error");
 const cookieParser = require('cookie-parser')
@@ -14,11 +14,11 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileupload());
-// app.use(cors({
-//     origin:'http://localhost:3000 ',
-//     methods:["GET","PUT","POST","DELETE"],
-//      credentials: true,
-// }));
+app.use(cors({
+    origin:'http://localhost:3000 ',
+    methods:["GET","PUT","POST","DELETE"],
+     credentials: true,
+}));
 
 //Route imports
 const product = require('./routes/productroute');
