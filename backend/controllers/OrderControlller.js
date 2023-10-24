@@ -26,7 +26,7 @@ exports.newOrder = catchasyncerrors(async (req, res, next) => {
     totalPrice,
     size,
     paidAt: Date.now(),
-    user: req.user.id,
+    user: req.user._id,
   });
 
   res.status(201).json({
@@ -38,7 +38,7 @@ exports.newOrder = catchasyncerrors(async (req, res, next) => {
 
 //get single order
 exports.getSingleOrder = catchasyncerrors(async (req, res, next) => {
-  const order = await Order.findById(req.params.id).populate(
+  const order = await Order.findById(req.params._id).populate(
     "user",
     "name email"
   ); //getting name and email with another schema
@@ -55,7 +55,7 @@ exports.getSingleOrder = catchasyncerrors(async (req, res, next) => {
 
 //get logged in user to  order
 exports.myOrders = catchasyncerrors(async (req, res, next) => {
-  const orders = await Order.find({ user: req.user.id });
+  const orders = await Order.find({ user: req.user._id });
 
   res.status(200).json({
     succes: true,
