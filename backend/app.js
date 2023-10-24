@@ -19,7 +19,7 @@ app.use(cors({
     methods:["GET","PUT","POST","DELETE"], 
     credentials: true,
 }));
-app.set("trust proxy", 1);
+app.set("trust proxy", true);
 
 //Route imports
 const product = require('./routes/productroute');
