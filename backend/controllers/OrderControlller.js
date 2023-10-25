@@ -38,7 +38,7 @@ exports.newOrder = catchasyncerrors(async (req, res, next) => {
 
 //get single order
 exports.getSingleOrder = catchasyncerrors(async (req, res, next) => {
-  const order = await Order.findById(req.params._id).populate(
+  const order = await Order.findById(res.params._id).populate(
     "user",
     "name email"
   ); //getting name and email with another schema
