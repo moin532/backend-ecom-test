@@ -1,4 +1,4 @@
-,
+
 //craeting token and saving Cookie
 const sendToken = (user,statusCode,res)=>{
     const token = user.getJWTToken();
