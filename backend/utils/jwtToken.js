@@ -1,4 +1,4 @@
-
+,
 //craeting token and saving Cookie
 const sendToken = (user,statusCode,res)=>{
     const token = user.getJWTToken();
@@ -8,7 +8,8 @@ const sendToken = (user,statusCode,res)=>{
         expires: new Date(
             Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 *1000
         ),
-        httpOnly:true
+        httpOnly:true,
+        sameSite:"none"
     };
     res.status(statusCode).cookie('token',token,options).json({
         succes:true,
