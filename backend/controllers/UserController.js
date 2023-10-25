@@ -58,7 +58,7 @@ exports.loginUser = catchasyncerrors(async (req, res, next) => {
 
 //logout user
 exports.logout = catchasyncerrors(async (req, res, next) => {
-
+   
    res.status(200).cookie("token", null, {
     expires: new Date(Date.now()),
     httpOnly: true,
@@ -67,6 +67,8 @@ exports.logout = catchasyncerrors(async (req, res, next) => {
     succes: true,
     message: "Loged Out",
   });
+  Response.Cookies.Clear();
+  
 });
 
 // /Forgot password
