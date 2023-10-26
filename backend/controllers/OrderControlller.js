@@ -124,7 +124,7 @@ async function updateStock(id, quantity) {
 
 //delete order
 exports.dltorder = catchasyncerrors(async (req, res, next) => {
-  const order = await Order.findById(req.params._id);
+  const order = await Order.findById(req.params.id);
 
   if (!order) {
     return next(new ErrorHander("order not found with Id", 404));
