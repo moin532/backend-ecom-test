@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileupload());
 app.use(cors({
-    origin:'https://mme-com.netlify.app,
+    origin:'https://ecom-mm.netlify.app',
     methods:["GET","PUT","POST","DELETE"], 
     credentials: true,
 }));
