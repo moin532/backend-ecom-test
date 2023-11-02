@@ -15,7 +15,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileupload());
 app.use(cors({
-    origin:'https://ecom-mm.netlify.app',
+    origin:'https://frontend-ecom-k3xg-g2zxhal4a-moin532s-projects.vercel.app',
     methods:["GET","PUT","POST","DELETE"], 
     credentials: true,
 }));
