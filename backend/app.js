@@ -15,11 +15,11 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileupload());
 app.use(cors({
-    origin:'https://frontend-ecom-k3xg-g2zxhal4a-moin532s-projects.vercel.app',
+    // origin:'https://frontend-ecom-k3xg-g2zxhal4a-moin532s-projects.vercel.app',
     methods:["GET","PUT","POST","DELETE"], 
     credentials: true,
 }));
-app.set("trust proxy", true);
+// app.set("trust proxy", true);
 
 //Route imports
 const product = require('./routes/productroute');
